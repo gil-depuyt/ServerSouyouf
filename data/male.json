@@ -1,0 +1,35 @@
+{
+  "1": [
+    { "day": "Lundi", "name": "Cross Training", "startTime": "16h00", "endTime": "17h00"},
+    { "day": "Lundi", "name": "Boxe Anglaise", "startTime": "18h00", "endTime": "19h30"},
+    { "day": "Lundi", "name": "Kickboxing", "startTime": "19h30", "endTime": "21h00" },
+    { "day": "Lundi", "name": "JJB", "startTime": "21h00", "endTime": "22h30" }
+  ],
+  "2": [
+    { "day": "Mardi", "name": "JJB", "startTime": "19h30", "endTime": "21h00", "type": "NO GI" },
+    { "day": "Mardi", "name": "MMA", "startTime": "21h00", "endTime": "22h30" }
+  ],
+  "3": [
+    { "day": "Mercredi", "name": "JJB", "startTime": "18h00" , "endTime": "19h30"},
+    { "day": "Mercredi", "name": "Boxe Anglaise", "startTime": "19h30" , "endTime": "21h00"},
+    { "day": "Mercredi", "name": "MMA", "startTime": "21h00" , "endTime": "22h30"}
+  ],
+  "4": [
+    { "day": "Jeudi", "name": "Cross Training", "startTime": "16h00" , "endTime": "17h00"},
+    { "day": "Jeudi", "name": "Kickboxing", "startTime": "18h30" , "endTime": "19h30"},
+    { "day": "Jeudi", "name": "MMA", "startTime": "19h30" , "endTime": "21h00"},
+    { "day": "Jeudi", "name": "JJB", "startTime": "21h00" , "endTime": "22h30"}
+  ],
+  "5": [
+    { "day": "Vendredi", "name": "Boxe Anglaise", "startTime": "18h00", "endTime": "19h30" },
+    { "day": "Vendredi", "name": "JJB", "startTime": "19h30" , "endTime": "21h00", "type": "NO GI"},
+    { "day": "Vendredi", "name": "MMA", "startTime": "21h00" , "endTime": "22h30"}
+  ],
+  "6": [
+    { "day": "Samedi", "name": "Cross Training", "startTime": "11h00" , "endTime": "12h00"},
+    { "day": "Samedi", "name": "Kickboxing", "startTime": "19h30" , "endTime": "21h00"},
+    { "day": "Samedi", "name": "MMA", "startTime": "21h00" , "endTime": "22h30"}
+  ],
+  "0": [
+    ]
+}

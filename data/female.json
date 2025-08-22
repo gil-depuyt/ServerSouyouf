@@ -1,0 +1,24 @@
+{
+  "1": [
+  ],
+  "2": [
+    { "day": "Mardi", "name": "Pilates", "startTime": "11h00", "endTime": "12h00" },
+    { "day": "Mardi", "name": "Kickboxing", "startTime": "13h50", "endTime": "15h00" }
+  ],
+  "3": [
+    { "day": "Mercredi", "name": "Kickboxing", "startTime": "16h00" , "endTime": "17h00", "type": "ADO"}
+  ],
+  "4": [
+    { "day": "Jeudi", "name": "Pilates", "startTime": "11h00" , "endTime": "12h00"},
+    { "day": "Jeudi", "name": "Cross Training", "startTime": "12h00" , "endTime": "13h30"},
+    { "day": "Jeudi", "name": "Kickboxing", "startTime": "13h30" , "endTime": "15h00"}
+  ],
+  "5": [
+  ],
+  "6": [
+  ],
+  "0": [
+    { "day": "Dimanche", "name": "Cross Training", "startTime": "11h00", "endTime": "12h00" },
+    { "day": "Dimanche", "name": "Kickboxing", "startTime": "12h30", "type": "ADO", "endTime": "13h30" }
+  ]
+}

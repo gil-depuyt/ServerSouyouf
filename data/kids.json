@@ -1,0 +1,28 @@
+{
+  "1": [
+    { "day": "Lundi", "name": "Boxe Kids", "startTime": "17h00", "endTime": "18h00"}
+  ],
+  "2": [
+    { "day": "Mardi", "name": "MMA KIDS", "startTime": "17h00", "endTime": "18h00" },
+    { "day": "Mardi", "name": "MMA JUNIORS", "startTime": "18h00", "endTime": "19h00" }
+  ],
+  "3": [
+    { "day": "Mercredi", "name": "JJB PETITS", "startTime": "14h00" , "endTime": "15h00"},
+    { "day": "Mercredi", "name": "JJB GRANDS", "startTime": "15h00" , "endTime": "16h00"},
+    { "day": "Mercredi", "name": "JJB JUNIORS", "startTime": "17h00" , "endTime": "18h00"}
+  ],
+  "4": [
+    { "day": "Jeudi", "name": "MMA KIDS", "startTime": "17h00" , "endTime": "18h00"}
+  ],
+  "5": [
+    { "day": "Vendredi", "name": "Boxe Kids", "startTime": "17h00", "endTime": "18h00" }
+  ],
+  "6": [
+    { "day": "Samedi", "name": "JJB PETITS", "startTime": "14h00" , "endTime": "15h00"},
+    { "day": "Samedi", "name": "JJB GRANDS", "startTime": "15h00" , "endTime": "16h00"},
+    { "day": "Samedi", "name": "JJB JUNIORS", "startTime": "16h00" , "endTime": "17h00"},
+    { "day": "Samedi", "name": "MMA JUNIORS", "startTime": "17h00" , "endTime": "18h00"}
+  ],
+  "0": [
+   ]
+}
