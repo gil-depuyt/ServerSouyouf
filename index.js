@@ -80,7 +80,6 @@ function parseDatePaiement(str) {
 
 function isSubscriptionValid(typePaiement, datePaiement) {
   const payedAt = parseDatePaiement(datePaiement);
-  console.log(payedAt);
   const now = new Date();
 
   if (typePaiement === "Trimestriel") {
@@ -88,7 +87,6 @@ function isSubscriptionValid(typePaiement, datePaiement) {
   } else if (typePaiement === "Annuel") {
     payedAt.setFullYear(payedAt.getFullYear() + 1);
   }
-  console.log(now, payedAt, now < payedAt);
   return now < payedAt;
 }
 
@@ -128,6 +126,7 @@ app.post("/createUser", async (req, res) => {
       adresse,
       package,
       typePaiement,
+      resteApaye,
       datePaiement,
       disciplines,
     } = req.body;
@@ -166,6 +165,7 @@ app.post("/createUser", async (req, res) => {
       package,
       typePaiement,
       datePaiement,
+      resteApaye,
       disciplines,
       DateAjout: admin.firestore.FieldValue.serverTimestamp(),
     });
@@ -291,6 +291,7 @@ app.put("/editUser", async (req, res) => {
       package,
       typePaiement,
       datePaiement,
+      resteApaye,
     } = user;
 
     if (!uid || !sexe) {
@@ -319,6 +320,7 @@ app.put("/editUser", async (req, res) => {
       typePaiement,
       datePaiement,
       disciplines,
+      resteApaye,
     });
 
     return res.status(200).json({ message: "User updated" });
@@ -355,14 +357,13 @@ app.delete("/deleteUser", async (req, res) => {
 
       try {
         await admin.auth().deleteUser(uid);
-        console.log("Auth user deleted:", uid);
       } catch (err) {
         console.error("Error deleting auth user:", err);
       }
 
       return res
         .status(200)
-        .json({ message: "User and auth deleted", collection });
+        .json({ message: "User and auth deleted" });
     }
     return res.status(404).json({ error: "User not found" });
   } catch (error) {

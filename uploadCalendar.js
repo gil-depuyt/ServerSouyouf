@@ -15,7 +15,7 @@ async function uploadCalendar(type) {
   const raw = fs.readFileSync(filePath, 'utf8');
   const schedule = JSON.parse(raw);
   await db.collection('Calendars').doc(type).set({ schedule });
-  console.log(`✅ Planning ${type} uploadé`);
+  // console.log(`✅ Planning ${type} uploadé`);
 }
 
 async function main() {
