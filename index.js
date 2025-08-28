@@ -10,7 +10,7 @@ const horaires = require("./data/male.json");
 const calendarRoutes = require("./routes/calendar");
 const QR_SECRET = process.env.QR_SECRET;
 
-const serviceAccount = require(process.env.FIREBASE_SERVICE_ACCOUNT_KEY_JSON);
+const serviceAccount = require('/etc/secrets/serviceAccountKey.json');
 const { match } = require("assert");
 // const { parse } = require("path");
 // const { type } = require("os");
