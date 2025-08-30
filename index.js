@@ -10,7 +10,7 @@ const horaires = require("./data/male.json");
 const calendarRoutes = require("./routes/calendar");
 const QR_SECRET = process.env.QR_SECRET;
 
-const serviceAccount = require('/etc/secrets/serviceAccountKey.json');
+const serviceAccount = require("/etc/secrets/serviceAccountKey.json");
 const { match } = require("assert");
 // const { parse } = require("path");
 // const { type } = require("os");
@@ -361,9 +361,7 @@ app.delete("/deleteUser", async (req, res) => {
         console.error("Error deleting auth user:", err);
       }
 
-      return res
-        .status(200)
-        .json({ message: "User and auth deleted" });
+      return res.status(200).json({ message: "User and auth deleted" });
     }
     return res.status(404).json({ error: "User not found" });
   } catch (error) {
@@ -561,6 +559,12 @@ app.post("/scan-checkin", async (req, res) => {
     }
     const userData = userDoc.data();
 
+  if (userData.admin === true) {
+    return res
+      .status(200)
+      .send({ message: "Présence enregistrée (ADMIN) !" });
+  }
+
     const category = userData.type?.toLowerCase();
     if (!category) {
       return res.status(400).json({ error: "Catégorie utilisateur inconnue" });
@@ -586,7 +590,10 @@ app.post("/scan-checkin", async (req, res) => {
     if (!matchedSession) {
       return res
         .status(403)
-        .send({ error: matchedSession + "Aucun cours actif ou proche dans votre planning" });
+        .send({
+          error:
+            matchedSession + "Aucun cours actif ou proche dans votre planning",
+        });
     }
 
     // Vérifie la discipline/payement
@@ -611,7 +618,9 @@ app.post("/scan-checkin", async (req, res) => {
       .get();
 
     if (!recentCheckins.empty) {
-      return res.status(409).send({ error: "Déjà scanné il y a moins de 2 heures" });
+      return res
+        .status(409)
+        .send({ error: "Déjà scanné il y a moins de 2 heures" });
     }
 
     // Enregistre le check-in
@@ -627,7 +636,6 @@ app.post("/scan-checkin", async (req, res) => {
     res.status(400).send({ error: "QR invalide ou expiré" });
   }
 });
-
 
 //PAS SUR DE GARDER
 app.get("/scan-status/:uid", async (req, res) => {
