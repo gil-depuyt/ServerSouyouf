@@ -78,7 +78,7 @@ function parseDatePaiement(str) {
   return new Date(year, month - 1, day, hours, minutes, seconds);
 }
 
-function isSubscriptionValid(typePaiement, datePaiement) {
+function isSubscriptionValid(typePaiement, datePaiement, rest) {
   const payedAt = parseDatePaiement(datePaiement);
   const now = new Date();
 
@@ -87,7 +87,7 @@ function isSubscriptionValid(typePaiement, datePaiement) {
   } else if (typePaiement === "Annuel") {
     payedAt.setFullYear(payedAt.getFullYear() + 1);
   }
-  return now < payedAt;
+  return now < payedAt && rest === 0;
 }
 
 // Middleware de vérificatoin du token Firebase envoyé dans l'en-tête Authorization
@@ -604,7 +604,7 @@ app.post("/scan-checkin", async (req, res) => {
     if (discipline === false) {
       return res.status(403).send({ error: "Accès discipline non autorisé" });
     }
-    if (!isSubscriptionValid(userData.typePaiement, userData.datePaiement)) {
+    if (!isSubscriptionValid(userData.typePaiement, userData.datePaiement, userData.resteApaye)) {
       return res.status(403).send({ error: "Abonnement expiré" });
     }
 
